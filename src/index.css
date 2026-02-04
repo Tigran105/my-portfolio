@@ -20,3 +20,38 @@
 body {
   min-height: 100vh;
 }
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .text-5xl {
+    font-size: 2.5rem !important;
+  }
+  
+  .text-4xl {
+    font-size: 2rem !important;
+  }
+  
+  .text-3xl {
+    font-size: 1.75rem !important;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem !important;
+  }
+  
+  .py-20 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  
+  .gap-8 {
+    gap: 1.5rem !important;
+  }
+  
+  .gap-16 {
+    gap: 2rem !important;
+  }
+}
