@@ -1,6 +1,7 @@
 ﻿import React, { useState } from "react";
 import { Navigation } from "./Navigation";
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { motion } from "framer-motion";
 import { useAppStore } from "../../store/appStore";
 import { NAV_LINKS } from "../../store/appStore";
@@ -42,6 +43,12 @@ export const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <Navigation />
 
+          {/* Desktop Controls */}
+          <div className="hidden md:flex items-center gap-4">
+            <LanguageSwitcher />
+            <ThemeToggle />
+          </div>
+
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
             <ThemeToggle />
@@ -51,11 +58,6 @@ export const Header: React.FC = () => {
             >
               {renderMobileMenuIcon()}
             </button>
-          </div>
-
-          {/* Desktop Theme Toggle */}
-          <div className="hidden md:block">
-            <ThemeToggle />
           </div>
         </div>
       </div>
@@ -79,6 +81,9 @@ export const Header: React.FC = () => {
                 {link.label}
               </Link>
             ))}
+            <div className="pt-4 border-t border-border">
+              <LanguageSwitcher />
+            </div>
           </div>
         </motion.div>
       )}
