@@ -17,7 +17,7 @@ export const Home: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-800"
+              className="text-5xl md:text-7xl font-bold mb-6 text-gradient"
             >
               Tigran Sargsyan
             </motion.h1>
@@ -26,7 +26,7 @@ export const Home: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-xl md:text-2xl text-gray-600 mb-8"
+              className="text-xl md:text-2xl text-foreground mb-8"
             >
               Frontend Developer & UI/UX Designer
             </motion.p>
@@ -35,7 +35,7 @@ export const Home: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="text-gray-600 mb-10 text-lg"
+              className="text-foreground/70 mb-10 text-lg"
             >
               Building beautiful, functional web experiences with modern technologies
             </motion.p>
