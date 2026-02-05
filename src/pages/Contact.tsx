@@ -5,6 +5,7 @@ import { Button } from '../components/ui/Button';
 import { SOCIAL_LINKS } from '../store/appStore';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 import { fadeInUp, fadeInLeft, staggerChildren } from '../utils/animations';
+import { useLanguage } from '../hooks/useLanguage';
 
 const iconMap = {
   github: FaGithub,
@@ -14,6 +15,8 @@ const iconMap = {
 };
 
 export const Contact: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <Section id="contact">
       <div className="container mx-auto px-4">
@@ -26,28 +29,28 @@ export const Contact: React.FC = () => {
             className="space-y-8"
           >
             <div>
-              <h2 className="text-4xl font-bold mb-4 text-gradient">Get In Touch</h2>
+              <h2 className="text-4xl font-bold mb-4 text-gradient">{t('contact.title')}</h2>
               <p className="text-foreground/70">
-                Have a project in mind or just want to say hi? Feel free to reach out!
+                {t('contact.description')}
               </p>
             </div>
 
             <form className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                  Name
+                  {t('contact.name')}
                 </label>
                 <input
                   type="text"
                   id="name"
                   className="w-full px-4 py-3 border border-border bg-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition"
-                  placeholder="Your name"
+                  placeholder={t('contact.name')}
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Email
+                  {t('contact.email')}
                 </label>
                 <input
                   type="email"
@@ -59,18 +62,18 @@ export const Contact: React.FC = () => {
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Message
+                  {t('contact.message')}
                 </label>
                 <textarea
                   id="message"
                   rows={5}
                   className="w-full px-4 py-3 border border-border bg-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition"
-                  placeholder="Your message..."
+                  placeholder={t('contact.message')}
                 ></textarea>
               </div>
 
               <Button type="submit" variant="primary" size="lg" className="w-full">
-                Send Message
+                {t('contact.sendMessage')}
               </Button>
             </form>
           </motion.div>
@@ -83,10 +86,9 @@ export const Contact: React.FC = () => {
             className="flex flex-col justify-center"
           >
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-gradient">Connect With Me</h3>
+              <h3 className="text-2xl font-bold text-gradient">{t('contact.connect')}</h3>
               <p className="text-foreground/70">
-                I'm always open to interesting projects and collaborations. 
-                Let's connect and create something amazing together!
+                {t('contact.collaboration')}
               </p>
 
               <motion.div

@@ -6,14 +6,27 @@ import { motion } from "framer-motion";
 import { useAppStore } from "../../store/appStore";
 import { NAV_LINKS } from "../../store/appStore";
 import whiteLogo from "../../assets/whiteLogo.svg";
-import { Link } from "react-router-dom";
-import { headerMotion, mobileMenuMotion } from "../../utils/animations";
+import { NavLink } from "./NavLink.tsx";
+import { Link } from 'react-router-dom';
+import { headerMotion, mobileMenuMotion } from '../../utils/animations';
+import { useLanguage } from '../../hooks/useLanguage';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { activeSection, theme } = useAppStore();
+  const { t } = useLanguage();
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
+  const getNavLabel = (id: string): string => {
+    const navMap: Record<string, string> = {
+      'home': t('nav.home'),
+      'about': t('nav.about'),
+      'experience': t('nav.experience'),
+      'contact': t('nav.contact'),
+    };
+    return navMap[id] || id;
+  };
 
   const renderMobileMenuIcon = () =>
     isMenuOpen ? <CloseIcon /> : <HamburgerIcon />;
@@ -78,7 +91,7 @@ export const Header: React.FC = () => {
                   activeSection === link.id ? "text-ring" : "text-foreground"
                 } hover:text-ring transition-colors`}
               >
-                {link.label}
+                {getNavLabel(link.id)}
               </Link>
             ))}
             <div className="pt-4 border-t border-border">
