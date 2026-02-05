@@ -7,6 +7,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  get: (key: string) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -31,7 +32,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     localStorage.setItem('language', lang);
   };
 
-  const t = (key: string): string => {
+  const get = (key: string): any => {
     const keys = key.split('.');
     let value: any = translations[language];
     
@@ -39,15 +40,23 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
       if (value && typeof value === 'object' && k in value) {
         value = value[k];
       } else {
-        return key;
+        return undefined;
       }
     }
     
-    return typeof value === 'string' ? value : key;
+    return value;
+  };
+
+  const t = (key: string): string => {
+    const value = get(key);
+    if (typeof value === 'string') {
+      return value;
+    }
+    return key;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, get }}>
       {children}
     </LanguageContext.Provider>
   );

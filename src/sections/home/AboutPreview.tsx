@@ -2,8 +2,11 @@
 import { motion } from 'framer-motion';
 import { Button } from '../../components/ui/Button';
 import { fadeInUp } from '../../utils/animations';
+import { useLanguage } from '../../hooks/useLanguage';
 
 export const AboutPreview: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="about-preview" className="py-20">
       <div className="container mx-auto px-4">
@@ -15,7 +18,7 @@ export const AboutPreview: React.FC = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold mb-6 text-gradient"
           >
-            About Me
+            {t('aboutPreview.title')}
           </motion.h2>
           
           <motion.p
@@ -26,8 +29,7 @@ export const AboutPreview: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-foreground/70 mb-8 text-lg leading-relaxed"
           >
-            I'm a passionate frontend developer with a strong focus on creating
-            beautiful, functional, and user-friendly web applications.
+            {t('aboutPreview.description')}
           </motion.p>
           
           <motion.div
@@ -38,7 +40,7 @@ export const AboutPreview: React.FC = () => {
             transition={{ delay: 0.4 }}
           >
             <Button variant="primary" size="lg">
-              More →
+              {t('aboutPreview.more')}
             </Button>
           </motion.div>
         </div>

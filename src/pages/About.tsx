@@ -4,8 +4,11 @@ import { Section } from '../components/ui/Section';
 import { Button } from '../components/ui/Button';
 import { SKILLS } from '../store/appStore';
 import { fadeInUp, fadeInLeft, staggerChildren } from '../utils/animations';
+import { useLanguage } from '../hooks/useLanguage';
 
 export const About: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <Section id="about">
       <div className="container mx-auto px-4">
@@ -17,21 +20,16 @@ export const About: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gradient">About Me</h2>
+            <h2 className="text-4xl font-bold mb-6 text-gradient">{t('about.title')}</h2>
             <p className="text-foreground/70 mb-6 text-lg leading-relaxed">
-              I'm a passionate frontend developer with a strong focus on creating
-              beautiful, functional, and user-friendly web applications. With expertise
-              in React, TypeScript, and modern web technologies, I bring designs to life
-              with clean code and smooth animations.
+              {t('about.description1')}
             </p>
             <p className="text-foreground/70 mb-8 text-lg leading-relaxed">
-              My approach combines technical excellence with design sensibility,
-              ensuring that every project not only works flawlessly but also provides
-              an exceptional user experience.
+              {t('about.description2')}
             </p>
             
             <div className="mb-8">
-              <h3 className="font-bold text-xl mb-4 text-foreground">Skills & Technologies</h3>
+              <h3 className="font-bold text-xl mb-4 text-foreground">{t('about.skills')}</h3>
               <motion.div
                 variants={staggerChildren}
                 initial="initial"
@@ -56,7 +54,7 @@ export const About: React.FC = () => {
             </div>
 
             <Button variant="primary" size="lg">
-              Back to Home
+              {t('about.backToHome')}
             </Button>
           </motion.div>
 

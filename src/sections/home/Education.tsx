@@ -1,24 +1,12 @@
 ﻿import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeInUp, fadeInLeft, staggerChildren } from '../../utils/animations';
+import { useLanguage } from '../../hooks/useLanguage';
 
 export const Education: React.FC = () => {
-  const educationData = [
-    {
-      id: 1,
-      degree: 'Bachelor of Science in Computer Science',
-      institution: 'University Name',
-      period: '2018 - 2022',
-      description: 'Focused on web development, algorithms, and software engineering principles.'
-    },
-    {
-      id: 2,
-      degree: 'Frontend Development Certification',
-      institution: 'Online Platform',
-      period: '2022 - 2023',
-      description: 'Advanced React, TypeScript, and modern web technologies.'
-    }
-  ];
+  const { t, get } = useLanguage();
+
+  const educationItems = get('education.items') || [];
 
   return (
     <section id="education" className="py-20">
@@ -31,7 +19,7 @@ export const Education: React.FC = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold mb-4 text-gradient"
           >
-            Education
+            {t('education.title')}
           </motion.h2>
           
           <motion.p
@@ -42,7 +30,7 @@ export const Education: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-foreground/70"
           >
-            My academic journey and certifications
+            {t('education.description')}
           </motion.p>
         </div>
 
@@ -53,9 +41,9 @@ export const Education: React.FC = () => {
           viewport={{ once: true }}
           className="space-y-8 max-w-3xl mx-auto"
         >
-          {educationData.map((edu, index) => (
+          {educationItems.map((edu: any, index: number) => (
             <motion.div
-              key={edu.id}
+              key={index}
               variants={fadeInLeft}
               className="bg-background rounded-xl p-8 border border-border hover:shadow-lg transition-shadow"
             >

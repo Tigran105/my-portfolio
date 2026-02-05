@@ -2,10 +2,14 @@
 import { motion } from 'framer-motion';
 import { Section } from '../components/ui/Section';
 import { Button } from '../components/ui/Button';
-import { EXPERIENCE_DATA } from '../store/appStore';
 import { fadeInUp, fadeInLeft, staggerChildren } from '../utils/animations';
+import { useLanguage } from '../hooks/useLanguage';
 
 export const Experience: React.FC = () => {
+  const { t, get } = useLanguage();
+
+  const experienceItems = get('experience.items') || [];
+
   return (
     <Section id="experience" className="bg-foreground/3">
       <div className="container mx-auto px-4">
@@ -16,9 +20,9 @@ export const Experience: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 text-gradient">Work Experience</h2>
+          <h2 className="text-4xl font-bold mb-4 text-gradient">{t('experience.title')}</h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">
-            Here's a detailed look at my professional journey and the projects I've worked on
+            {t('experience.description')}
           </p>
         </motion.div>
 
@@ -29,9 +33,9 @@ export const Experience: React.FC = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto space-y-8"
         >
-          {EXPERIENCE_DATA.map((job, index) => (
+          {experienceItems.map((job: any, index: number) => (
             <motion.div
-              key={job.id}
+              key={index}
               variants={fadeInLeft}
               className="bg-background rounded-xl shadow-md p-8 border border-border hover:shadow-xl transition-shadow"
             >
@@ -50,9 +54,9 @@ export const Experience: React.FC = () => {
               </p>
               
               <div className="flex flex-wrap gap-2">
-                {job.technologies.map((tech) => (
+                {job.technologies.map((tech: string, idx: number) => (
                   <span
-                    key={tech}
+                    key={idx}
                     className="px-3 py-1 bg-ring/10 text-ring rounded-full text-sm font-medium"
                   >
                     {tech}
@@ -65,7 +69,7 @@ export const Experience: React.FC = () => {
 
         <div className="text-center mt-12">
           <Button variant="primary" size="lg">
-            Back to Home
+            {t('experience.backToHome')}
           </Button>
         </div>
       </div>

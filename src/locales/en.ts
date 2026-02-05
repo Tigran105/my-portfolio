@@ -25,6 +25,20 @@
   education: {
     title: 'Education',
     description: 'My academic journey and certifications',
+    items: [
+      {
+        degree: 'Bachelor of Science in Computer Science',
+        institution: 'University Name',
+        period: '2018 - 2022',
+        description: 'Focused on web development, algorithms, and software engineering principles.'
+      },
+      {
+        degree: 'Frontend Development Certification',
+        institution: 'Online Platform',
+        period: '2022 - 2023',
+        description: 'Advanced React, TypeScript, and modern web technologies.'
+      }
+    ]
   },
   getInTouch: {
     title: 'Get In Touch',
@@ -42,6 +56,22 @@
     title: 'Work Experience',
     description: 'Here\'s a detailed look at my professional journey and the projects I\'ve worked on',
     backToHome: 'Back to Home',
+    items: [
+      {
+        company: 'Company Name',
+        position: 'Frontend Developer',
+        period: 'Jan 2023 - Present',
+        description: 'Working on modern web applications using React, TypeScript, and Tailwind CSS.',
+        technologies: ['React', 'TypeScript', 'Tailwind', 'Zustand']
+      },
+      {
+        company: 'Previous Company',
+        position: 'UI Developer',
+        period: 'Mar 2021 - Dec 2022',
+        description: 'Built responsive user interfaces and collaborated with design teams.',
+        technologies: ['React', 'JavaScript', 'CSS', 'Figma']
+      }
+    ]
   },
   contact: {
     title: 'Get In Touch',

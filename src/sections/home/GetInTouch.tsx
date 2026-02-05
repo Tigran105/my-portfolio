@@ -4,6 +4,7 @@ import { Button } from '../../components/ui/Button';
 import { SOCIAL_LINKS } from '../../store/appStore';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 import { fadeInUp, fadeInLeft, staggerChildren } from '../../utils/animations';
+import { useLanguage } from '../../hooks/useLanguage';
 
 const iconMap = {
   github: FaGithub,
@@ -13,6 +14,8 @@ const iconMap = {
 };
 
 export const GetInTouch: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="get-in-touch" className="py-20 bg-foreground/3">
       <div className="container mx-auto px-4">
@@ -24,7 +27,7 @@ export const GetInTouch: React.FC = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold mb-4 text-gradient"
           >
-            Get In Touch
+            {t('getInTouch.title')}
           </motion.h2>
           
           <motion.p
@@ -35,7 +38,7 @@ export const GetInTouch: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-foreground/70"
           >
-            Have a project in mind or just want to say hi?
+            {t('getInTouch.description')}
           </motion.p>
         </div>
 
@@ -73,7 +76,7 @@ export const GetInTouch: React.FC = () => {
 
         <div className="text-center mt-12">
           <Button variant="primary" size="lg">
-            Contact Me →
+            {t('getInTouch.contact')}
           </Button>
         </div>
       </div>
