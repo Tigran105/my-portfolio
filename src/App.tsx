@@ -1,4 +1,4 @@
-﻿import { Header } from "./components/common/Header";
+import { Header } from "./components/common/Header";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Experience } from "./pages/Experience";
@@ -9,7 +9,6 @@ import { useEffect } from "react";
 function App() {
   const { theme, toggleTheme } = useAppStore();
 
-  // Применяем тему при загрузке
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark";
     const prefersDark = window.matchMedia(
