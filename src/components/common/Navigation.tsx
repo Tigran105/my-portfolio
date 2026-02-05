@@ -1,17 +1,17 @@
-﻿import React from 'react';
-import { NavLink } from './NavLink';
-import { NAV_LINKS } from '../../store/appStore';
-import { useLanguage } from '../../hooks/useLanguage';
+﻿import React from "react";
+import { NavLink } from "./NavLink";
+import { NAV_LINKS } from "../../store/appStore";
+import { useLanguage } from "../../hooks/useLanguage";
 
 export const Navigation: React.FC = () => {
   const { t } = useLanguage();
 
   const getNavLabel = (id: string): string => {
     const navMap: Record<string, string> = {
-      'home': t('nav.home'),
-      'about': t('nav.about'),
-      'experience': t('nav.experience'),
-      'contact': t('nav.contact'),
+      home: t("nav.home"),
+      about: t("nav.about"),
+      experience: t("nav.experience"),
+      contact: t("nav.contact"),
     };
     return navMap[id] || id;
   };
@@ -24,7 +24,7 @@ export const Navigation: React.FC = () => {
             <NavLink
               href={link.href}
               label={getNavLabel(link.id)}
-              className="text-foreground hover:text-violet-400 transition font-medium"
+              className="text-foreground hover:text-violet-400 transition font-medium md:min-w-[68px]"
             />
           </li>
         ))}
