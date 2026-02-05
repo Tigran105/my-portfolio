@@ -1,3 +1,4 @@
+﻿import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/common/Header";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
@@ -22,7 +23,7 @@ function App() {
     if (initialTheme !== theme) {
       toggleTheme();
     }
-  }, [theme, toggleTheme]);
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
@@ -30,14 +31,16 @@ function App() {
   }, [theme]);
 
   return (
-    <>
+    <BrowserRouter>
       <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
         <Header />
         <main>
-          <Home />
-          <About />
-          <Experience />
-          <Contact />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
         </main>
       </div>
       <footer className="bg-background border-t border-border py-8">
@@ -47,7 +50,7 @@ function App() {
           </p>
         </div>
       </footer>
-    </>
+    </BrowserRouter>
   );
 }
 

@@ -1,10 +1,10 @@
 ﻿import { create } from 'zustand';
 
 export const NAV_LINKS = [
-  { id: 'home', label: 'Home', href: '#home' },
-  { id: 'about', label: 'About', href: '#about' },
-  { id: 'experience', label: 'Experience', href: '#experience' },
-  { id: 'contact', label: 'Contact', href: '#contact' },
+  { id: 'home', label: 'Home', href: '/' },
+  { id: 'about', label: 'About', href: '/about' },
+  { id: 'experience', label: 'Experience', href: '/experience' },
+  { id: 'contact', label: 'Contact', href: '/contact' },
 ];
 
 export const SOCIAL_LINKS = [

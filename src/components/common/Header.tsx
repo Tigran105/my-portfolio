@@ -4,25 +4,9 @@ import { ThemeToggle } from "./ThemeToggle";
 import { motion } from "framer-motion";
 import { useAppStore } from "../../store/appStore";
 import { NAV_LINKS } from "../../store/appStore";
-import purpleLogo from "../../assets/purpleLogo.svg";
-import whiteLogo from "../../assets/purpleLogo.svg";
-import { NavLink } from "./NavLink.tsx";
-
-const headerMotion: {
-  initial: { y: number };
-  animate: { y: number };
-  transition: import("framer-motion").Transition;
-} = {
-  initial: { y: -100 },
-  animate: { y: 0 },
-  transition: { type: "spring", damping: 25 } as const,
-};
-
-const mobileMenuMotion = {
-  initial: { opacity: 0, height: 0 },
-  animate: { opacity: 1, height: "auto" },
-  exit: { opacity: 0, height: 0 },
-};
+import whiteLogo from "../../assets/whiteLogo.svg";
+import { Link } from "react-router-dom";
+import { headerMotion, mobileMenuMotion } from "../../utils/animations";
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,16 +30,13 @@ export const Header: React.FC = () => {
             whileTap={{ scale: 0.95 }}
             className="flex items-center gap-3 cursor-pointer"
           >
-            <NavLink
-              href="/"
-              label={
-                <img
-                  src={theme === "light" ? purpleLogo : whiteLogo}
-                  alt="logo"
-                  className="w-[40px]"
-                />
-              }
-            />
+            <Link to="/">
+              <img
+                src={whiteLogo}
+                alt="logo"
+                className={`w-[40px] brightness-150 contrast-125 ${theme === "dark" ? "" : "invert"}`}
+              />
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -87,16 +68,16 @@ export const Header: React.FC = () => {
         >
           <div className="container mx-auto px-4 py-6 flex flex-col gap-6">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.id}
-                href={link.href}
+                to={link.href}
                 onClick={() => setIsMenuOpen(false)}
                 className={`text-lg font-medium ${
                   activeSection === link.id ? "text-ring" : "text-foreground"
                 } hover:text-ring transition-colors`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </motion.div>

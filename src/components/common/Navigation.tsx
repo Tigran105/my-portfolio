@@ -11,9 +11,7 @@ export const Navigation: React.FC = () => {
             <NavLink
               href={link.href}
               label={link.label}
-              className={
-                "text-foreground hover:text-violet-400 transition font-medium"
-              }
+              className="text-foreground hover:text-violet-400 transition font-medium"
             />
           </li>
         ))}
