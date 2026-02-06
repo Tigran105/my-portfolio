@@ -11,23 +11,27 @@
     --foreground: 26 32 44;         /* almost black, strong contrast */
     --border: 200 208 216;          /* soft gray for borders */
     --input: 241 245 249;           /* very light input background */
-    --ring: 99 102 241;             /* vivid blue accent */
-    --accent: 124 58 237;           /* purple accent */
-    --gradient-from: 99 102 241;    /* blue for gradient */
-    --gradient-to: 124 58 237;      /* purple for gradient */
+    --ring: 47 46 176;             /* vivid blue accent */
+    --accent: 207 194 212;           /* purple accent */
+    --gradient-from: 270 80 40;  /* dark purple for light mode */
+    --gradient-to: 220 90 35;    /* dark blue for light mode */
+    --bg-gradient-from: 287 78 92; /* light purple-blue for light mode */
+    --bg-gradient-to: 220 71 85;   /* light blue for light mode */
     --radius: 0.5rem;
   }
 
   /* Dark theme */
   .dark {
-    --background: 26 32 44;         /* dark gray background */
+    --background: 40 21 40;         /* dark gray background */
     --foreground: 226 232 240;      /* bright text */
     --border: 74 85 104;            /* medium gray */
     --input: 56 70 89;              /* input background */
-    --ring: 99 102 241;             /* vivid blue accent */
-    --accent: 167 139 250;          /* bright purple for hover */
-    --gradient-from: 99 102 241;    /* blue for gradient */
-    --gradient-to: 167 139 250;     /* purple for gradient */
+    --ring: 113 129 255;             /* vivid blue accent */
+    --accent: 49 42 100;          /* bright purple for hover */
+    --gradient-from: 270 100 65; /* bright purple for dark mode */
+    --gradient-to: 210 100 65;   /* bright blue for dark mode */
+    --bg-gradient-from: 287 78 22; /* dark purple-blue for dark mode */
+    --bg-gradient-to: 220 71 16;   /* dark blue for dark mode */
   }
 
   body {
@@ -86,11 +90,11 @@ html {
 
 /* Custom gradient utilities */
 .bg-gradient-custom {
-  background: linear-gradient(100deg, rgb(var(--gradient-from)), rgb(var(--gradient-to)));
+  background: linear-gradient(100deg, hsl(var(--bg-gradient-from)), hsl(var(--bg-gradient-to)));
 }
 
 .text-gradient {
-  background: linear-gradient(to right, rgb(var(--gradient-from)), rgb(var(--gradient-to)));
+  background: linear-gradient(to right, hsl(var(--gradient-from)), hsl(var(--gradient-to)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
