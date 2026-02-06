@@ -1,12 +1,13 @@
-﻿import React from 'react';
-import { motion } from 'framer-motion';
-import { fadeInUp, fadeInLeft, staggerChildren } from '../../utils/animations';
-import { useLanguage } from '../../hooks/useLanguage';
+﻿import React from "react";
+import { motion } from "framer-motion";
+import { fadeInUp, fadeInLeft, staggerChildren } from "../../utils/animations";
+import { useLanguage } from "../../hooks/useLanguage";
+import type { EducationItem } from "../../locales";
 
 export const Education: React.FC = () => {
   const { t, get } = useLanguage();
 
-  const educationItems = get('education.items') || [];
+  const educationItems = get<EducationItem[]>("education.items") || [];
 
   return (
     <section id="education" className="py-20">
@@ -19,9 +20,9 @@ export const Education: React.FC = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold mb-4 text-gradient"
           >
-            {t('education.title')}
+            {t("education.title")}
           </motion.h2>
-          
+
           <motion.p
             variants={fadeInUp}
             initial="initial"
@@ -30,7 +31,7 @@ export const Education: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-foreground/70"
           >
-            {t('education.description')}
+            {t("education.description")}
           </motion.p>
         </div>
 
@@ -41,7 +42,7 @@ export const Education: React.FC = () => {
           viewport={{ once: true }}
           className="space-y-8 max-w-3xl mx-auto"
         >
-          {educationItems.map((edu: any, index: number) => (
+          {educationItems.map((edu: EducationItem, index: number) => (
             <motion.div
               key={index}
               variants={fadeInLeft}
@@ -49,8 +50,12 @@ export const Education: React.FC = () => {
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground">{edu.degree}</h3>
-                  <p className="text-ring font-medium mt-1">{edu.institution}</p>
+                  <h3 className="text-2xl font-bold text-foreground">
+                    {edu.degree}
+                  </h3>
+                  <p className="text-ring font-medium mt-1">
+                    {edu.institution}
+                  </p>
                 </div>
                 <span className="text-foreground/60 text-sm bg-foreground/5 px-4 py-1 rounded-full">
                   {edu.period}

@@ -1,14 +1,15 @@
-﻿import React from 'react';
-import { motion } from 'framer-motion';
-import { Section } from '../components/ui/Section';
-import { Button } from '../components/ui/Button';
-import { fadeInUp, fadeInLeft, staggerChildren } from '../utils/animations';
-import { useLanguage } from '../hooks/useLanguage';
+﻿import React from "react";
+import { motion } from "framer-motion";
+import { Section } from "../components/ui/Section";
+import { Button } from "../components/ui/Button";
+import { fadeInUp, fadeInLeft, staggerChildren } from "../utils/animations";
+import { useLanguage } from "../hooks/useLanguage";
+import type { ExperienceItem } from "../locales";
 
 export const Experience: React.FC = () => {
   const { t, get } = useLanguage();
 
-  const experienceItems = get('experience.items') || [];
+  const experienceItems = get<ExperienceItem[]>("experience.items") || [];
 
   return (
     <Section id="experience" className="bg-foreground/3">
@@ -20,9 +21,11 @@ export const Experience: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 text-gradient">{t('experience.title')}</h2>
+          <h2 className="text-4xl font-bold mb-4 text-gradient">
+            {t("experience.title")}
+          </h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">
-            {t('experience.description')}
+            {t("experience.description")}
           </p>
         </motion.div>
 
@@ -33,7 +36,7 @@ export const Experience: React.FC = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto space-y-8"
         >
-          {experienceItems.map((job: any, index: number) => (
+          {experienceItems.map((job: ExperienceItem, index: number) => (
             <motion.div
               key={index}
               variants={fadeInLeft}
@@ -41,18 +44,20 @@ export const Experience: React.FC = () => {
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground">{job.position}</h3>
+                  <h3 className="text-2xl font-bold text-foreground">
+                    {job.position}
+                  </h3>
                   <p className="text-ring font-medium mt-1">{job.company}</p>
                 </div>
                 <span className="text-foreground/60 text-sm bg-foreground/5 px-4 py-1 rounded-full">
                   {job.period}
                 </span>
               </div>
-              
+
               <p className="text-foreground/70 mb-6 leading-relaxed">
                 {job.description}
               </p>
-              
+
               <div className="flex flex-wrap gap-2">
                 {job.technologies.map((tech: string, idx: number) => (
                   <span
@@ -69,7 +74,7 @@ export const Experience: React.FC = () => {
 
         <div className="text-center mt-12">
           <Button variant="primary" size="lg">
-            {t('experience.backToHome')}
+            {t("experience.backToHome")}
           </Button>
         </div>
       </div>
