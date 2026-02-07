@@ -1,5 +1,4 @@
 ﻿import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Header } from "./components/common/Header";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Experience } from "./pages/Experience";
@@ -7,6 +6,7 @@ import { Contact } from "./pages/Contact";
 import { useAppStore } from "./store/appStore";
 import { useEffect } from "react";
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
+import { Header } from "./components/common/Header/Header.tsx";
 
 function AppContent() {
   const { theme, toggleTheme } = useAppStore();

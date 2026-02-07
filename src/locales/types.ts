@@ -14,6 +14,7 @@ export interface EducationItem {
 }
 
 export interface Translation {
+  portfolio: string;
   nav: {
     home: string;
     about: string;

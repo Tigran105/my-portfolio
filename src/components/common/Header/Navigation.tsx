@@ -1,7 +1,7 @@
 ﻿import React from "react";
-import { NavLink } from "./NavLink";
-import { NAV_LINKS } from "../../store/appStore";
-import { useLanguage } from "../../hooks/useLanguage";
+import { NavLink } from "../NavLink.tsx";
+import { NAV_LINKS } from "../../../store/appStore.ts";
+import { useLanguage } from "../../../hooks/useLanguage.ts";
 
 export const Navigation: React.FC = () => {
   const { t } = useLanguage();
@@ -20,7 +20,7 @@ export const Navigation: React.FC = () => {
     <nav className="hidden md:flex items-center gap-5 text-sm">
       <ul className="flex gap-8">
         {NAV_LINKS.map((link) => (
-          <li key={link.id}>
+          <li key={link.id} className={"whitespace-nowrap"}>
             <NavLink
               href={link.href}
               label={getNavLabel(link.id)}
