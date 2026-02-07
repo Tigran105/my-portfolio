@@ -30,7 +30,9 @@ export interface Translation {
   };
   aboutPreview: {
     title: string;
+    subtitle: string;
     description: string;
+    highlights: string[];
     more: string;
   };
   experiencePreview: {

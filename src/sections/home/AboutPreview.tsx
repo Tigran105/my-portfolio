@@ -1,26 +1,44 @@
-﻿import React from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '../../components/ui/Button';
-import { fadeInUp } from '../../utils/animations';
-import { useLanguage } from '../../hooks/useLanguage';
+﻿import React from "react";
+import { motion } from "framer-motion";
+import { Button } from "../../components/ui/Button";
+import { fadeInUp } from "../../utils/animations";
+import { useLanguage } from "../../hooks/useLanguage";
+import { useNavigate } from "react-router-dom";
 
 export const AboutPreview: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, get } = useLanguage();
+  const navigate = useNavigate();
+
+  const highlights = get<string[]>("aboutPreview.highlights") || [];
 
   return (
     <section id="about-preview" className="py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Title */}
           <motion.h2
             variants={fadeInUp}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="text-4xl font-bold mb-6 text-gradient"
+            className="text-4xl font-bold mb-4 text-gradient"
           >
-            {t('aboutPreview.title')}
+            {t("aboutPreview.title")}
           </motion.h2>
-          
+
+          {/* Subtitle */}
+          <motion.p
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-xl font-medium mb-6"
+          >
+            {t("aboutPreview.subtitle")}
+          </motion.p>
+
+          {/* Description */}
           <motion.p
             variants={fadeInUp}
             initial="initial"
@@ -29,9 +47,32 @@ export const AboutPreview: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-foreground/70 mb-8 text-lg leading-relaxed"
           >
-            {t('aboutPreview.description')}
+            {t("aboutPreview.description")}
           </motion.p>
-          
+
+          {/* Highlights */}
+          {Array.isArray(highlights) && (
+            <motion.ul
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10"
+            >
+              {highlights.map((item, index) => (
+                <li
+                  key={index}
+                  className="flex items-center gap-2 text-sm text-foreground/80"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-ring" />
+                  {item}
+                </li>
+              ))}
+            </motion.ul>
+          )}
+
+          {/* CTA */}
           <motion.div
             variants={fadeInUp}
             initial="initial"
@@ -39,8 +80,12 @@ export const AboutPreview: React.FC = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <Button variant="primary" size="lg">
-              {t('aboutPreview.more')}
+            <Button
+              variant="secondary"
+              size="lg"
+              onClick={() => navigate("/about")}
+            >
+              {t("aboutPreview.more")}
             </Button>
           </motion.div>
         </div>

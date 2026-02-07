@@ -18,8 +18,14 @@ export const en: Translation = {
   },
   aboutPreview: {
     title: "About Me",
+    subtitle: "Senior Frontend Developer",
     description:
-      "I'm a passionate frontend developer with a strong focus on creating beautiful, functional, and user-friendly web applications.",
+      "I build scalable and high-performance web applications using React and TypeScript, with a strong focus on clean architecture and user experience.",
+    highlights: [
+      "Performance-first UI",
+      "Clean and maintainable code",
+      "Modern frontend architecture",
+    ],
     more: "More →",
   },
   experiencePreview: {

@@ -16,7 +16,7 @@ interface MobileNavigationProps {
 export const MobileNavigation: React.FC<MobileNavigationProps> = ({
   setIsMenuOpen,
 }) => {
-  const { activeSection, theme } = useAppStore();
+  const { theme } = useAppStore();
   const { t } = useLanguage();
 
   const getNavLabel = (id: string): string => {
@@ -61,7 +61,9 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
               to={link.href}
               onClick={() => setIsMenuOpen(false)}
               className={`text-lg font-medium ${
-                activeSection === link.id ? "text-ring" : "text-foreground"
+                location.pathname === link.href
+                  ? "text-ring"
+                  : "text-foreground"
               } hover:text-ring transition-colors`}
             >
               {getNavLabel(link.id)}

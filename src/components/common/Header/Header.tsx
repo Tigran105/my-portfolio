@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center cursor-pointer md:px-5"
+            className="flex items-center cursor-pointer md:px-8"
           >
             <Link to="/">
               <div
