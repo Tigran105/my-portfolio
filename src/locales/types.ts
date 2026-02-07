@@ -9,10 +9,8 @@
   website?: string;
 }
 export interface EducationItem {
-  degree: string;
   institution: string;
-  period: string;
-  description: string;
+  time: string;
 }
 
 export interface Translation {
@@ -47,11 +45,6 @@ export interface Translation {
     description: string;
     items: EducationItem[];
   };
-  getInTouch: {
-    title: string;
-    description: string;
-    contact: string;
-  };
   about: {
     title: string;
     description1: string;
@@ -72,6 +65,7 @@ export interface Translation {
     email: string;
     message: string;
     sendMessage: string;
+    other: string;
     connect: string;
     collaboration: string;
   };

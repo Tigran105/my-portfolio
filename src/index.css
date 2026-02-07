@@ -25,7 +25,7 @@
     --background: 40 21 40;         /* dark gray background */
     --foreground: 226 232 240;      /* bright text */
     --border: 74 85 104;            /* medium gray */
-    --input: 56 70 89;              /* input background */
+    --input: 40 21 40;              /* input background */
     --ring: 113 129 255;             /* vivid blue accent */
     --accent: 49 42 100;          /* bright purple for hover */
     --gradient-from: 270 100 65; /* bright purple for dark mode */

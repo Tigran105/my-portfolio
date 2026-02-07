@@ -50,18 +50,12 @@ export const Education: React.FC = () => {
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground">
-                    {edu.degree}
-                  </h3>
-                  <p className="text-ring font-medium mt-1">
+                  <h3 className="text-2xl font-bold text-ring">
                     {edu.institution}
-                  </p>
+                  </h3>
                 </div>
-                <span className="text-foreground/60 text-sm bg-foreground/5 px-4 py-1 rounded-full">
-                  {edu.period}
-                </span>
               </div>
-              <p className="text-foreground/70">{edu.description}</p>
+              <p className="text-foreground/70">{edu.time}</p>
             </motion.div>
           ))}
         </motion.div>

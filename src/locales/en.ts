@@ -37,25 +37,12 @@ export const en: Translation = {
     title: "Education",
     description: "My academic journey and certifications",
     items: [
+      { institution: "Basic IT Center", time: "02.2020 - 09.2020" },
       {
-        degree: "Bachelor of Science in Computer Science",
-        institution: "University Name",
-        period: "2018 - 2022",
-        description:
-          "Focused on web development, algorithms, and software engineering principles.",
-      },
-      {
-        degree: "Frontend Development Certification",
-        institution: "Online Platform",
-        period: "2022 - 2023",
-        description: "Advanced React, TypeScript, and modern web technologies.",
+        institution: "National Polytechnic University of Armenia, Yerevan",
+        time: "09.2016 - 05.2022",
       },
     ],
-  },
-  getInTouch: {
-    title: "Get In Touch",
-    description: "Have a project in mind or just want to say hi?",
-    contact: "Contact Me →",
   },
   about: {
     title: "About Me",
@@ -174,6 +161,7 @@ export const en: Translation = {
     message: "Message",
     sendMessage: "Send Message",
     connect: "Connect With Me",
+    other: "Other ways to connect →",
     collaboration:
       "I'm always open to interesting projects and collaborations. Let's connect and create something amazing together!",
   },

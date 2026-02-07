@@ -1,11 +1,11 @@
 ﻿import React from "react";
 import { motion } from "framer-motion";
 import { Section } from "../components/ui/Section";
-import { Button } from "../components/ui/Button";
 import { SOCIAL_LINKS } from "../store/appStore";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import { fadeInUp, fadeInLeft, staggerChildren } from "../utils/animations";
 import { useLanguage } from "../hooks/useLanguage";
+import { GetInTouch } from "../sections/home/GetInTouch.tsx";
 
 const iconMap = {
   github: FaGithub,
@@ -21,77 +21,7 @@ export const Contact: React.FC = () => {
     <Section id="contact">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <motion.div
-            variants={fadeInLeft}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            <div>
-              <h2 className="text-4xl font-bold mb-4 text-gradient">
-                {t("contact.title")}
-              </h2>
-              <p className="text-foreground/70">{t("contact.description")}</p>
-            </div>
-
-            <form className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-foreground mb-2"
-                >
-                  {t("contact.name")}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-3 border border-border bg-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition"
-                  placeholder={t("contact.name")}
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-foreground mb-2"
-                >
-                  {t("contact.email")}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 border border-border bg-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-foreground mb-2"
-                >
-                  {t("contact.message")}
-                </label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  className="w-full px-4 py-3 border border-border bg-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition"
-                  placeholder={t("contact.message")}
-                ></textarea>
-              </div>
-
-              <Button
-                type="submit"
-                variant="primary"
-                size="lg"
-                className="w-full"
-              >
-                {t("contact.sendMessage")}
-              </Button>
-            </form>
-          </motion.div>
-
+          <GetInTouch />
           <motion.div
             variants={fadeInUp}
             initial="initial"
