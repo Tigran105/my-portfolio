@@ -21,7 +21,6 @@ export const Contact: React.FC = () => {
     <Section id="contact">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <GetInTouch />
           <motion.div
             variants={fadeInUp}
             initial="initial"
@@ -72,6 +71,8 @@ export const Contact: React.FC = () => {
               </motion.div>
             </div>
           </motion.div>
+
+          <GetInTouch />
         </div>
       </div>
     </Section>

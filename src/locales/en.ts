@@ -168,4 +168,11 @@ export const en: Translation = {
   footer: {
     copyright: "All rights reserved",
   },
+  messages: {
+    email: "Please enter a valid email",
+    name: "Please enter your name",
+    message: "Please enter a message",
+    success: "Message sent successfully",
+    error: "Something went wrong, please try again",
+  },
 };

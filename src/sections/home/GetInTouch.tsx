@@ -1,22 +1,52 @@
-﻿import React, { useRef } from "react";
+﻿import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Button } from "../../components/ui/Button";
 import { fadeInLeft } from "../../utils/animations";
 import { useLanguage } from "../../hooks/useLanguage";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
+type FormErrors = {
+  name: boolean;
+  email: boolean;
+  message: boolean;
+};
 export const GetInTouch: React.FC = () => {
   const { t } = useLanguage();
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [errors, setErrors] = useState<FormErrors>({
+    name: false,
+    email: false,
+    message: false,
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!formRef.current) return;
 
-    const currentTime = new Date().toLocaleString();
+    const formData = new FormData(formRef.current);
+    const name = formData.get("name")?.toString().trim() || "";
+    const email = formData.get("email")?.toString().trim() || "";
+    const message = formData.get("message")?.toString().trim() || "";
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const newErrors = {
+      name: !name,
+      email: !email || !emailRegex.test(email),
+      message: !message,
+    };
+    setErrors(newErrors);
+
+    if (newErrors.name || newErrors.email || newErrors.message) {
+      if (newErrors.name) toast.error(t("messages.name"));
+      else if (newErrors.email) toast.error(t("messages.email"));
+      else if (newErrors.message) toast.error(t("messages.message"));
+      return;
+    }
+
+    const currentTime = new Date().toLocaleString();
     const hiddenInput = document.createElement("input");
     hiddenInput.type = "hidden";
     hiddenInput.name = "time";
@@ -32,14 +62,15 @@ export const GetInTouch: React.FC = () => {
       )
       .then(
         () => {
-          alert("Message sent successfully 🚀");
           formRef.current?.reset();
           hiddenInput.remove();
+          setErrors({ name: false, email: false, message: false });
+          toast.success(t("messages.success"));
         },
         (error) => {
           console.error(error);
-          alert("Something went wrong 😢");
           hiddenInput.remove();
+          toast.error(t("messages.error"));
         },
       );
   };
@@ -69,53 +100,35 @@ export const GetInTouch: React.FC = () => {
           </div>
 
           <form ref={formRef} className="space-y-6">
-            <div>
-              {/*<label*/}
-              {/*  htmlFor="name"*/}
-              {/*  className="block text-sm font-medium text-foreground mb-2"*/}
-              {/*>*/}
-              {/*  {t("contact.name")}*/}
-              {/*</label>*/}
-              <input
-                type="text"
-                id="name"
-                name={"name"}
-                className="w-full px-4 py-3 border border-border bg-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition"
-                placeholder={t("contact.name")}
-              />
-            </div>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              className={`w-full bg-input px-4 py-3 border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition ${
+                errors.name ? "border-error" : "border-border"
+              }`}
+              placeholder={t("contact.name")}
+            />
 
-            <div>
-              {/*<label*/}
-              {/*  htmlFor="email"*/}
-              {/*  className="block text-sm font-medium text-foreground mb-2"*/}
-              {/*>*/}
-              {/*  {t("contact.email")}*/}
-              {/*</label>*/}
-              <input
-                type="email"
-                id="email"
-                name={"email"}
-                className="w-full px-4 py-3 border border-border bg-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition"
-                placeholder="your.email@example.com"
-              />
-            </div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className={`w-full bg-input px-4 py-3 border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition ${
+                errors.email ? "border-error" : "border-border"
+              }`}
+              placeholder="your.email@example.com"
+            />
 
-            <div>
-              {/*<label*/}
-              {/*  htmlFor="message"*/}
-              {/*  className="block text-sm font-medium text-foreground mb-2"*/}
-              {/*>*/}
-              {/*  {t("contact.message")}*/}
-              {/*</label>*/}
-              <textarea
-                id="message"
-                name={"message"}
-                rows={5}
-                className="w-full px-4 py-3 border border-border bg-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition"
-                placeholder={t("contact.message")}
-              ></textarea>
-            </div>
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              className={`w-full bg-input px-4 py-3 border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition ${
+                errors.message ? "border-error" : "border-border"
+              }`}
+              placeholder={t("contact.message")}
+            />
 
             <Button
               type="submit"

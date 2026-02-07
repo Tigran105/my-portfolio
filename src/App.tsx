@@ -7,6 +7,7 @@ import { useAppStore } from "./store/appStore";
 import { useEffect } from "react";
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import { Header } from "./components/common/Header/Header.tsx";
+import { Toaster } from "react-hot-toast";
 
 function AppContent() {
   const { theme, toggleTheme } = useAppStore();
@@ -53,6 +54,8 @@ function AppContent() {
           </p>
         </div>
       </footer>
+
+      <Toaster position="top-center" reverseOrder={false} />
     </BrowserRouter>
   );
 }

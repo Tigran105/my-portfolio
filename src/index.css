@@ -13,6 +13,7 @@
     --input: 241 245 249;           /* very light input background */
     --ring: 47 46 176;             /* vivid blue accent */
     --accent: 207 194 212;           /* purple accent */
+    --error: 220 38 38;             /* bright red for errors */
     --gradient-from: 270 80 40;  /* dark purple for light mode */
     --gradient-to: 220 90 35;    /* dark blue for light mode */
     --bg-gradient-from: 287 78 92; /* light purple-blue for light mode */
@@ -28,6 +29,7 @@
     --input: 40 21 40;              /* input background */
     --ring: 113 129 255;             /* vivid blue accent */
     --accent: 49 42 100;          /* bright purple for hover */
+    --error: 220 38 38;             /* bright red for errors */
     --gradient-from: 270 100 65; /* bright purple for dark mode */
     --gradient-to: 210 100 65;   /* bright blue for dark mode */
     --bg-gradient-from: 287 78 22; /* dark purple-blue for dark mode */
@@ -56,6 +58,9 @@
   
   .border-border {
     @apply border-[rgb(var(--border))];
+  }
+  .border-error{
+    @apply border-[rgb(var(--error))];
   }
   
   .bg-input {
@@ -135,4 +140,10 @@ html {
   .gap-16 {
     gap: 2rem !important;
   }
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(var(--input)) inset;
+  -webkit-text-fill-color: rgb(var(--foreground));
+  transition: background-color 5000s ease-in-out 0s;
 }

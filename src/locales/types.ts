@@ -72,6 +72,13 @@ export interface Translation {
   footer: {
     copyright: string;
   };
+  messages: {
+    name: string;
+    email: string;
+    message: string;
+    success: string;
+    error: string;
+  };
 }
 
 export type Language = "en" | "ru" | "hy";
