@@ -1,11 +1,13 @@
 ﻿export interface ExperienceItem {
+  id: number;
+  role: string;
+  time: string;
   company: string;
-  position: string;
-  period: string;
-  description: string;
-  technologies: string[];
+  type?: string;
+  skills: string[];
+  description: string[];
+  website?: string;
 }
-
 export interface EducationItem {
   degree: string;
   institution: string;

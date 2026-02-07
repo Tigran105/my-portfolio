@@ -58,17 +58,19 @@ export const AboutPreview: React.FC = () => {
               whileInView="animate"
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10"
+              className="flex flex-col justify-center items-center gap-4 mb-10"
             >
-              {highlights.map((item, index) => (
-                <li
-                  key={index}
-                  className="flex items-center gap-2 text-sm text-foreground/80"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-ring" />
-                  {item}
-                </li>
-              ))}
+              <div className="flex flex-col sm:flex-row justify-start items-start sm:items-center gap-4">
+                {highlights.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center gap-2 text-sm text-foreground/80"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-ring" />
+                    {item}
+                  </li>
+                ))}
+              </div>
             </motion.ul>
           )}
 
@@ -83,7 +85,10 @@ export const AboutPreview: React.FC = () => {
             <Button
               variant="secondary"
               size="lg"
-              onClick={() => navigate("/about")}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                navigate("/about");
+              }}
             >
               {t("aboutPreview.more")}
             </Button>
