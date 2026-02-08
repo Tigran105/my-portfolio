@@ -117,7 +117,7 @@ export const GetInTouch: React.FC = () => {
               className={`w-full bg-input px-4 py-3 border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition ${
                 errors.email ? "border-error" : "border-border"
               }`}
-              placeholder="your.email@example.com"
+              placeholder="Email"
             />
 
             <textarea

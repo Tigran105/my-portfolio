@@ -78,6 +78,16 @@ export interface Translation {
     message: string;
     success: string;
     error: string;
+    copied: string;
+    copy: string;
+    copyError: string;
+    open: string;
+  };
+  socialNotes: {
+    github: string;
+    linkedin: string;
+    phone: string;
+    email: string;
   };
 }
 

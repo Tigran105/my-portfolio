@@ -174,5 +174,16 @@ export const en: Translation = {
     message: "Please enter a message",
     success: "Message sent successfully",
     error: "Something went wrong, please try again",
+    copied: "Copied!",
+    copy: "Copy",
+    copyError: "Failed to copy",
+    open: "Open",
+  },
+
+  socialNotes: {
+    linkedin: "Let's connect professionally",
+    github: "See my code and open-source work",
+    email: "Send me an email",
+    phone: "Call or send me a message",
   },
 };
