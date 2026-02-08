@@ -85,8 +85,8 @@ export const GetInTouch: React.FC = () => {
           viewport={{ once: true }}
           className="space-y-8 max-w-3xl mx-auto"
         >
-          <div>
-            <h2 className="text-4xl font-bold mb-4 text-gradient text-center">
+          <div className={"space-y-1 text-center"}>
+            <h2 className="text-4xl font-bold mb-4 text-gradient">
               {t("contact.title")}
             </h2>
             <p className="text-foreground/70 text-center">

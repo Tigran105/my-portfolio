@@ -24,7 +24,12 @@ export const Navigation: React.FC = () => {
             <NavLink
               href={link.href}
               label={getNavLabel(link.id)}
-              className="text-foreground hover:text-violet-400 transition font-medium md:min-w-[68px]"
+              className={`text-foreground hover:text-violet-400 transition font-medium
+              ${
+                location.pathname === link.href
+                  ? "text-gradient"
+                  : "text-foreground"
+              }`}
             />
           </li>
         ))}

@@ -3,7 +3,7 @@ import { LanguageSwitcher } from "../LanguageSwitcher";
 import { motion } from "framer-motion";
 import { useAppStore } from "../../../store/appStore";
 import { NAV_LINKS } from "../../../store/appStore";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { mobileMenuMotion } from "../../../utils/animations";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { HiX } from "react-icons/hi";
@@ -16,6 +16,7 @@ interface MobileNavigationProps {
 export const MobileNavigation: React.FC<MobileNavigationProps> = ({
   setIsMenuOpen,
 }) => {
+  const location = useLocation();
   const { theme } = useAppStore();
   const { t } = useLanguage();
 
@@ -62,7 +63,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
               onClick={() => setIsMenuOpen(false)}
               className={`text-lg font-medium ${
                 location.pathname === link.href
-                  ? "text-ring"
+                  ? "text-gradient"
                   : "text-foreground"
               } hover:text-ring transition-colors`}
             >

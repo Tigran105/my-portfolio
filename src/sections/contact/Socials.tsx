@@ -75,15 +75,17 @@ export const Socials: React.FC = () => {
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
-      className="flex flex-col justify-center pt-20 px-1"
+      className="flex flex-col  pt-20 px-1"
     >
       <div className="space-y-6">
-        <h2 className="text-4xl font-bold text-gradient text-center px-2">
-          {t("contact.connect")}
-        </h2>
-        <p className="text-foreground/70 text-center px-2">
-          {t("contact.collaboration")}
-        </p>
+        <div className={"space-y-2 text-center mx-auto"}>
+          <h2 className="text-4xl font-bold text-gradient mx-auto px-2">
+            {t("contact.connect")}
+          </h2>
+          <p className="text-foreground/70 text-center px-2">
+            {t("contact.collaboration")}
+          </p>
+        </div>
 
         <motion.div
           variants={staggerChildren}

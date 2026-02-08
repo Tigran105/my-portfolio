@@ -5,145 +5,148 @@
 @tailwind utilities;
 
 @layer base {
-  /* Light theme */
-  :root {
-    --background: 255 255 255;      /* pure white */
-    --foreground: 26 32 44;         /* almost black, strong contrast */
-    --border: 200 208 216;          /* soft gray for borders */
-    --input: 241 245 249;           /* very light input background */
-    --ring: 47 46 176;             /* vivid blue accent */
-    --accent: 207 194 212;           /* purple accent */
-    --error: 220 38 38;             /* bright red for errors */
-    --gradient-from: 270 80 40;  /* dark purple for light mode */
-    --gradient-to: 220 90 35;    /* dark blue for light mode */
-    --bg-gradient-from: 287 78 92; /* light purple-blue for light mode */
-    --bg-gradient-to: 220 71 85;   /* light blue for light mode */
-    --radius: 0.5rem;
-  }
+    /* Light theme */
+    :root {
+        --background: 255 255 255; /* pure white */
+        --foreground: 26 32 44; /* almost black, strong contrast */
+        --border: 200 208 216; /* soft gray for borders */
+        --input: 241 245 249; /* very light input background */
+        --ring: 47 46 176; /* vivid blue accent */
+        --accent: 207 194 212; /* purple accent */
+        --error: 220 38 38; /* bright red for errors */
+        --gradient-from: 270 80 40; /* dark purple for light mode */
+        --gradient-to: 220 90 35; /* dark blue for light mode */
+        --bg-gradient-from: 287 78 92; /* light purple-blue for light mode */
+        --bg-gradient-to: 220 71 85; /* light blue for light mode */
+        --radius: 0.5rem;
+    }
 
-  /* Dark theme */
-  .dark {
-    --background: 40 21 40;         /* dark gray background */
-    --foreground: 226 232 240;      /* bright text */
-    --border: 74 85 104;            /* medium gray */
-    --input: 40 21 40;              /* input background */
-    --ring: 113 129 255;             /* vivid blue accent */
-    --accent: 49 42 100;          /* bright purple for hover */
-    --error: 220 38 38;             /* bright red for errors */
-    --gradient-from: 270 100 65; /* bright purple for dark mode */
-    --gradient-to: 210 100 65;   /* bright blue for dark mode */
-    --bg-gradient-from: 287 78 22; /* dark purple-blue for dark mode */
-    --bg-gradient-to: 220 71 16;   /* dark blue for dark mode */
-  }
+    /* Dark theme */
+    .dark {
+        --background: 40 21 40; /* dark gray background */
+        --foreground: 226 232 240; /* bright text */
+        --border: 74 85 104; /* medium gray */
+        --input: 40 21 40; /* input background */
+        --ring: 113 129 255; /* vivid blue accent */
+        --accent: 49 42 100; /* bright purple for hover */
+        --error: 220 38 38; /* bright red for errors */
+        --gradient-from: 210 100 65; /* bright purple for dark mode */
+        --gradient-to: 270 100 65; /* bright blue for dark mode */
+        --bg-gradient-from: 287 78 22; /* dark purple-blue for dark mode */
+        --bg-gradient-to: 220 71 16; /* dark blue for dark mode */
+    }
 
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, sans-serif;
-    line-height: 1.5;
-    min-height: 100vh;
-    font-feature-settings: "liga" on, "kern" on;
-    -webkit-font-smoothing: antialiased;
-  }
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', system-ui, sans-serif;
+        line-height: 1.5;
+        min-height: 100vh;
+        font-feature-settings: "liga" on, "kern" on;
+        -webkit-font-smoothing: antialiased;
+    }
 }
 
 /* Custom utilities */
 @layer utilities {
-  .bg-background {
-    @apply bg-[rgb(var(--background))];
-  }
-  
-  .text-foreground {
-    @apply text-[rgb(var(--foreground))];
-  }
-  
-  .border-border {
-    @apply border-[rgb(var(--border))];
-  }
-  .border-error{
-    @apply border-[rgb(var(--error))];
-  }
-  
-  .bg-input {
-    @apply bg-[rgb(var(--input))];
-  }
-  
-  .text-ring {
-    @apply text-[rgb(var(--ring))];
-  }
-  
-  .bg-ring {
-    @apply bg-[rgb(var(--ring))];
-  }
-  
-  .text-accent {
-    @apply text-[rgb(var(--accent))];
-  }
-  
-  .bg-accent {
-    @apply bg-[rgb(var(--accent))];
-  }
+    .bg-background {
+        @apply bg-[rgb(var(--background))];
+    }
+
+    .text-foreground {
+        @apply text-[rgb(var(--foreground))];
+    }
+
+    .border-border {
+        @apply border-[rgb(var(--border))];
+    }
+
+    .border-error {
+        @apply border-[rgb(var(--error))];
+    }
+
+    .bg-input {
+        @apply bg-[rgb(var(--input))];
+    }
+
+    .text-ring {
+        @apply text-[rgb(var(--ring))];
+    }
+
+    .bg-ring {
+        @apply bg-[rgb(var(--ring))];
+    }
+
+    .text-accent {
+        @apply text-[rgb(var(--accent))];
+    }
+
+    .bg-accent {
+        @apply bg-[rgb(var(--accent))];
+    }
 }
 
 /* Global styles */
 html, body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* Custom gradient utilities */
 .bg-gradient-custom {
-  background: linear-gradient(100deg, hsl(var(--bg-gradient-from)), hsl(var(--bg-gradient-to)));
+    background: linear-gradient(100deg, hsl(var(--bg-gradient-from)), hsl(var(--bg-gradient-to)));
 }
 
 .text-gradient {
-  background: linear-gradient(to right, hsl(var(--gradient-from)), hsl(var(--gradient-to)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+    background: linear-gradient(to right, hsl(var(--gradient-from)), hsl(var(--gradient-to)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 1.5rem;
-  }
-  
-  .text-5xl {
-    font-size: 2.5rem !important;
-  }
-  
-  .text-4xl {
-    font-size: 2rem !important;
-  }
-  
-  .text-3xl {
-    font-size: 1.75rem !important;
-  }
-  
-  .text-2xl {
-    font-size: 1.5rem !important;
-  }
-  
-  .py-20 {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-  }
-  
-  .gap-8 {
-    gap: 1.5rem !important;
-  }
-  
-  .gap-16 {
-    gap: 2rem !important;
-  }
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .text-5xl {
+        font-size: 2.5rem !important;
+    }
+
+    .text-4xl {
+        font-size: 2rem !important;
+    }
+
+    .text-3xl {
+        font-size: 1.75rem !important;
+    }
+
+    .text-2xl {
+        font-size: 1.5rem !important;
+    }
+
+    .py-20 {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+
+    .gap-8 {
+        gap: 1.5rem !important;
+    }
+
+    .gap-16 {
+        gap: 2rem !important;
+    }
 }
+
 input:-webkit-autofill,
 textarea:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px rgb(var(--input)) inset;
-  -webkit-text-fill-color: rgb(var(--foreground));
-  transition: background-color 5000s ease-in-out 0s;
+    -webkit-box-shadow: 0 0 0px 1000px rgb(var(--input)) inset;
+    -webkit-text-fill-color: rgb(var(--foreground));
+    transition: background-color 5000s ease-in-out 0s;
 }
