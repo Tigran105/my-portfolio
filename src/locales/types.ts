@@ -69,6 +69,13 @@ export interface Translation {
     backToHome: string;
     items: ExperienceItem[];
   };
+
+  githubCta: {
+    title: string;
+    subtitle: string;
+    description: string;
+    button: string;
+  };
   contact: {
     title: string;
     description: string;

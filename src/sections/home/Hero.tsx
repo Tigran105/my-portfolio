@@ -55,14 +55,14 @@ export const Hero: React.FC = () => {
       >
         <motion.h1
           variants={fadeInLeft}
-          className="text-5xl md:text-7xl font-bold mb-6 text-gradient py-2"
+          className="text-5xl md:text-7xl font-bold mb-5 text-gradient py-2 pt-10"
         >
           {t("hero.title")}
         </motion.h1>
 
         <motion.p
           variants={fadeInRight}
-          className="text-xl md:text-2xl text-foreground mb-8"
+          className="text-xl md:text-2xl text-foreground mb-5"
         >
           {t("hero.subtitle")}
         </motion.p>

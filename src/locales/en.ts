@@ -158,6 +158,13 @@ export const en: Translation = {
       },
     ],
   },
+  githubCta: {
+    title: "Take a Peek at My GitHub",
+    subtitle: "Code Speaks Louder Than Words",
+    description:
+      "Want to see my architectural patterns and daily activity? Explore my public repositories where ideas transform into production-ready code.",
+    button: "Explore GitHub",
+  },
   contact: {
     title: "Get In Touch",
     description:
