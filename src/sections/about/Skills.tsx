@@ -21,12 +21,14 @@ export const Skills: React.FC<{ className?: string }> = ({ className }) => {
   const { t } = useLanguage();
 
   return (
-    <section className={`py-16 sm:py-20 ${className || ""}`}>
+    <section className={`sm:py-20 ${className || ""}`}>
       <div className="mx-auto px-4">
         {/* Title */}
-        <AnimatedTitle size="sm" className="mb-6 sm:mb-8">
-          {t("about.skills")}
-        </AnimatedTitle>
+        <AnimatedTitle
+          size="sm"
+          className={"mb-2"}
+          children={t("about.skills")}
+        />
 
         {/* Grid */}
         <div

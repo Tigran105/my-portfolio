@@ -9,10 +9,12 @@ export const en: Translation = {
     contact: "Contact",
   },
   hero: {
-    title: "Tigran Sargsyan",
-    subtitle: "Frontend Developer & UI/UX Designer",
+    title: "I’m Tigran",
+    subtitle:
+      "Building elegant, scalable web and mobile interfaces with React, React Native, and Next.js.",
     description:
-      "Building beautiful, functional web experiences with modern technologies",
+      "Delivering clean, scalable, and high-performance web and mobile applications. I turn complex " +
+      "ideas into intuitive interfaces, ensuring quality, consistency, and usability.",
     viewWork: "View My Work",
     contactMe: "Contact Me",
   },

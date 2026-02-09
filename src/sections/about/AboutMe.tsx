@@ -18,9 +18,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ className }) => {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       className={className}
-      // className={" pt-2 lg:pt-[100px]"}
     >
-      <h2 className="text-4xl font-bold mb-6 text-gradient"></h2>
       <AnimatedTitle children={t("about.title")} />
       <p className="text-foreground/70 mb-6 text-lg leading-relaxed">
         {t("about.description1")}
