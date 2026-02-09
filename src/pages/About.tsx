@@ -1,82 +1,22 @@
-﻿import React from 'react';
-import { motion } from 'framer-motion';
-import { Section } from '../components/ui/Section';
-import { Button } from '../components/ui/Button';
-import { SKILLS } from '../store/appStore';
-import { fadeInUp, fadeInLeft, staggerChildren } from '../utils/animations';
-import { useLanguage } from '../hooks/useLanguage';
-
+﻿import React from "react";
+import { Section } from "../components/ui/Section";
+import { AboutMe } from "../sections/about/AboutMe.tsx";
+import { Skills } from "../sections/about/Skills.tsx";
+import { MyPhoto } from "../sections/about/MyPhoto.tsx";
+import { PersonalInfo } from "../sections/about/PersonalInfo.tsx";
+import WhatIDo from "../sections/about/WhatIdo.tsx";
 export const About: React.FC = () => {
-  const { t } = useLanguage();
-
   return (
     <Section id="about">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            variants={fadeInLeft}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl font-bold mb-6 text-gradient">{t('about.title')}</h2>
-            <p className="text-foreground/70 mb-6 text-lg leading-relaxed">
-              {t('about.description1')}
-            </p>
-            <p className="text-foreground/70 mb-8 text-lg leading-relaxed">
-              {t('about.description2')}
-            </p>
-            
-            <div className="mb-8">
-              <h3 className="font-bold text-xl mb-4 text-foreground">{t('about.skills')}</h3>
-              <motion.div
-                variants={staggerChildren}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                className="flex flex-wrap gap-3"
-              >
-                {SKILLS.map((skill, index) => (
-                  <motion.span
-                    key={skill}
-                    variants={fadeInUp}
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="px-4 py-2 bg-foreground/5 rounded-full text-sm font-medium hover:bg-ring/20 hover:text-ring transition-colors cursor-pointer"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </motion.div>
-            </div>
-
-            <Button variant="primary" size="lg">
-              {t('about.backToHome')}
-            </Button>
-          </motion.div>
-
-          <motion.div
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex justify-center"
-          >
-            <div className="relative">
-              <div className="w-80 h-80 bg-gradient-custom rounded-2xl shadow-2xl flex items-center justify-center">
-                <div className="text-white text-center px-8">
-                  <div className="text-6xl font-bold mb-4">TS</div>
-                  <p className="text-xl font-medium">Creative Developer</p>
-                </div>
-              </div>
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-accent/50 rounded-lg shadow-lg"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-ring/50 rounded-lg shadow-lg"></div>
-            </div>
-          </motion.div>
+      <div className="container mx-auto lg:px-20 pt-20">
+        <div className={"flex flex-col lg:flex-row items-center gap-12 mb-16"}>
+          <MyPhoto className="order-1" />
+          <AboutMe className="order-2 lg:order-3" />
+        </div>
+        <div className={"xl:px-20"}>
+          <WhatIDo />
+          <Skills className="order-3 lg:order-2" />
+          <PersonalInfo />
         </div>
       </div>
     </Section>

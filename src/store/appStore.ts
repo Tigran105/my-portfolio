@@ -44,37 +44,61 @@ export const SOCIAL_LINKS = [
   },
 ];
 
-export const EXPERIENCE_DATA = [
-  {
-    id: 1,
-    company: "Company Name",
-    position: "Frontend Developer",
-    period: "Jan 2023 - Present",
-    description:
-      "Working on modern web applications using React, TypeScript, and Tailwind CSS.",
-    technologies: ["React", "TypeScript", "Tailwind", "Zustand"],
-  },
-  {
-    id: 2,
-    company: "Previous Company",
-    position: "UI Developer",
-    period: "Mar 2021 - Dec 2022",
-    description:
-      "Built responsive user interfaces and collaborated with design teams.",
-    technologies: ["React", "JavaScript", "CSS", "Figma"],
-  },
-];
-
 export const SKILLS = [
-  "React",
-  "TypeScript",
-  "JavaScript",
-  "Tailwind CSS",
-  "Zustand",
-  "Framer Motion",
-  "Vite",
-  "Git",
-  "UI/UX",
+  {
+    title: "Frontend Development",
+    icon: "frontend",
+    skills: [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "React Native",
+      "Redux",
+      "Zustand",
+      "Tailwind",
+      "Testing (Jest)",
+    ],
+  },
+  {
+    title: "UI / UX Engineering",
+    icon: "uiux",
+    skills: [
+      "Component Architecture",
+      "UI Systems",
+      "Animations",
+      "Responsive Design",
+      "Interaction Design",
+      "Mobile-First Layout",
+    ],
+  },
+  {
+    title: "Data Visualization",
+    icon: "dataviz",
+    skills: [
+      "HTML Canvas",
+      "Konva (learning)",
+      "Three.js",
+      "WebGL (basic)",
+      "Coordinate Systems",
+      "Drag & Drop Logic",
+      "2D / 3D Interaction Logic",
+    ],
+  },
+  {
+    title: "Engineering & Tools",
+    icon: "tools",
+    skills: [
+      "REST API Integration",
+      "OAuth 2.0",
+      "Google Login",
+      "Facebook Login",
+      "Stripe Payments Integration",
+      "Git / GitLab",
+      "Refactoring",
+      "Product Thinking",
+    ],
+  },
 ];
 
 interface AppState {

@@ -12,6 +12,15 @@ export interface EducationItem {
   institution: string;
   time: string;
 }
+export type PersonalSection = {
+  title: string;
+  description: string;
+};
+export type WhatIdo = {
+  title: string;
+  description: string;
+  icon: string;
+};
 
 export interface Translation {
   portfolio: string;
@@ -51,6 +60,8 @@ export interface Translation {
     description2: string;
     skills: string;
     backToHome: string;
+    photoTitle: string;
+    status: string;
   };
   experience: {
     title: string;
@@ -88,6 +99,14 @@ export interface Translation {
     linkedin: string;
     phone: string;
     email: string;
+  };
+  valuesAndPrinciples: {
+    title: string;
+    items: PersonalSection[];
+  };
+  whatIdo: {
+    title: string;
+    items: WhatIdo[];
   };
 }
 

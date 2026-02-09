@@ -26,7 +26,7 @@ export const en: Translation = {
       "Clean and maintainable code",
       "Modern frontend architecture",
     ],
-    more: "More →",
+    more: "More about Me →",
   },
   experiencePreview: {
     title: "Work Experience",
@@ -47,11 +47,15 @@ export const en: Translation = {
   about: {
     title: "About Me",
     description1:
-      "I'm a passionate frontend developer with a strong focus on creating beautiful, functional, and user-friendly web applications. With expertise in React, TypeScript, and modern web technologies, I bring designs to life with clean code and smooth animations.",
+      "I’m Tigran - Front-End Developer with 5+ years of experience in React and React Native, building web and mobile applications. Skilled in interactive UIs," +
+      " including 3D experiences with Three.js, and integrating analytics and payment solutions like Stripe. Passionate about delivering user-focused solutions that drive business value.",
     description2:
-      "My approach combines technical excellence with design sensibility, ensuring that every project not only works flawlessly but also provides an exceptional user experience.",
+      "Building fast, intentional interfaces with a focus on modularity and performance. I enjoy solving complex UI challenges in" +
+      " planners and internal tools, leveraging structured state management to create seamless user experiences.",
     skills: "Skills & Technologies",
     backToHome: "Back to Home",
+    photoTitle: "Creative Developer",
+    status: "Open to creative collaborations",
   },
   experience: {
     title: "Work Experience",
@@ -185,5 +189,60 @@ export const en: Translation = {
     github: "See my code and open-source work",
     email: "Send me an email",
     phone: "Call or send me a message",
+  },
+  valuesAndPrinciples: {
+    title: "Values & Principles",
+    items: [
+      {
+        title: "How I Work",
+        description:
+          "I approach problems with a product mindset, starting with understanding the user and the goal, then designing clear and maintainable solutions.\n\n" +
+          "I value clean architecture, reusable components, and thoughtful interactions. I iterate quickly, test assumptions early, and pay close attention to performance and visual details.\n\n" +
+          "I work comfortably both independently and in collaboration with designers and product teams, turning ideas into polished, production-ready interfaces.",
+      },
+      {
+        title: "What I Value",
+        description:
+          "I value clarity and usability in every interface, along with clean, maintainable, and scalable code.\n\n" +
+          "Strong collaboration, teamwork, and continuous learning are important to me, as well as taking responsibility and ownership for the work I deliver.\n\n" +
+          "I care deeply about performance, smooth user interactions, and solving problems thoughtfully and the right way.",
+      },
+      {
+        title: "Personal Note",
+        description:
+          "I focus on building meaningful, intuitive, and high-quality interfaces that feel natural and easy to use.\n\n" +
+          "I enjoy learning new technologies, exploring visual systems, and experimenting with interaction patterns and UI details.\n\n" +
+          "My goal is to turn complex ideas into simple, clear, and enjoyable user experiences.",
+      },
+    ],
+  },
+  whatIdo: {
+    title: "What I Do",
+    items: [
+      {
+        icon: "dashboard",
+        title: "Complex Interfaces & Dashboards",
+        description:
+          "Designing and building data-heavy interfaces, admin panels, and internal tools with clear structure and scalable architecture.",
+      },
+      {
+        icon: "planner",
+        title: "Interactive Editors & Planners",
+        description:
+          "Developing drag-and-drop systems, planners, and visual editors with precise logic, performance focus, and smooth interaction.",
+      },
+      {
+        icon: "uiux",
+        title: "UI Architecture & UX Thinking",
+        description:
+          "Creating reusable component systems with strong UX fundamentals, consistency, and attention to interaction details.",
+      },
+      {
+        icon: "frontend",
+        title: "Advanced Frontend Engineering",
+        description:
+          "Building modern frontend applications using React, Next.js, Tailwind CSS, Canvas, and animation libraries.",
+      },
+    ],
   },
 };
