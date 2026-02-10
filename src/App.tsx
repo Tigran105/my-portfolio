@@ -1,13 +1,16 @@
 ﻿import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Experience } from "./pages/Experience";
-import { Contact } from "./pages/Contact";
-import { useAppStore } from "./store/appStore";
 import { useEffect } from "react";
-import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
-import { Header } from "./components/common/Header/Header.tsx";
 import { Toaster } from "react-hot-toast";
+import { useAppStore } from "@/shared/store/appStore.ts";
+import {
+  LanguageProvider,
+  useLanguage,
+} from "@/shared/contexts/LanguageContext.tsx";
+import { Header } from "@/shared/components/common/Header/Header.tsx";
+import { Home } from "@/features/home/page.tsx";
+import { About } from "@/features/about/page.tsx";
+import { Experience } from "@/features/experience/page.tsx";
+import { Contact } from "@/features/contact/page.tsx";
 
 function AppContent() {
   const { theme, toggleTheme } = useAppStore();
