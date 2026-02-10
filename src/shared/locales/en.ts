@@ -254,4 +254,28 @@ export const en: Translation = {
       },
     ],
   },
+  seo: {
+    home: {
+      title: "Tigran Sargsyan — Senior Software Developer",
+      description:
+        "Building modern web applications with React, TypeScript & Node.js. Based in Armenia.",
+    },
+    about: {
+      title: "About Me — Tigran Sargsyan",
+      description:
+        "Passionate software developer with 5+ years of experience in frontend and backend development.",
+    },
+    experience: {
+      title: "Experience — Tigran Sargsyan",
+      description:
+        "Professional journey and key projects I've worked on as a software developer.",
+    },
+    contact: {
+      title: "Contact — Tigran Sargsyan",
+      description:
+        "Get in touch for collaboration opportunities, freelance projects, or just to say hello.",
+    },
+    jobTitle: "Senior Software Developer",
+    company: "Freelance",
+  },
 };

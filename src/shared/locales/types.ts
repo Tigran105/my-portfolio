@@ -115,6 +115,26 @@ export interface Translation {
     title: string;
     items: WhatIdo[];
   };
+  seo: {
+    home: {
+      title: string;
+      description: string;
+    };
+    about: {
+      title: string;
+      description: string;
+    };
+    experience: {
+      title: string;
+      description: string;
+    };
+    contact: {
+      title: string;
+      description: string;
+    };
+    jobTitle: string;
+    company: string;
+  };
 }
 
 export type Language = "en" | "ru" | "hy";
