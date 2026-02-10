@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { LanguageSwitcher } from "../LanguageSwitcher";
 import { motion } from "framer-motion";
 import { useAppStore } from "../../../store/appStore";
@@ -30,6 +30,15 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
     return navMap[id] || id;
   };
 
+  useEffect(() => {
+    document.documentElement.style.overflow = "hidden"; // html
+    document.body.style.overflow = "hidden"; // body
+
+    return () => {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+    };
+  }, []);
   return (
     <motion.div
       className={`fixed inset-0 ${theme === "dark" ? "bg-black/40" : "bg-white/40"} backdrop-blur-sm z-50`}
@@ -60,7 +69,10 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
             <Link
               key={link.id}
               to={link.href}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setIsMenuOpen(false);
+              }}
               className={`text-lg font-medium ${
                 location.pathname === link.href
                   ? "text-gradient"

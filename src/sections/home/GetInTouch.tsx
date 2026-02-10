@@ -2,10 +2,11 @@
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Button } from "../../components/ui/Button";
-import { fadeInLeft } from "../../utils/animations";
+import { fadeInRight } from "../../utils/animations";
 import { useLanguage } from "../../hooks/useLanguage";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import { AnimatedTitle } from "../../components/ui/AnimatedTitle.tsx";
 
 type FormErrors = {
   name: boolean;
@@ -79,16 +80,14 @@ export const GetInTouch: React.FC = () => {
     <section id="get-in-touch" className="py-20 bg-foreground/3">
       <div className="container mx-auto px-4">
         <motion.div
-          variants={fadeInLeft}
+          variants={fadeInRight}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           className="space-y-8 max-w-3xl mx-auto"
         >
           <div className={"space-y-1 text-center"}>
-            <h2 className="text-4xl font-bold mb-4 text-gradient">
-              {t("contact.title")}
-            </h2>
+            <AnimatedTitle children={t("contact.title")} />
             <p className="text-foreground/70 text-center">
               {t("contact.description")} <br />
               {location.pathname !== "/contact" && (

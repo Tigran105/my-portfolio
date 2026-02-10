@@ -36,7 +36,10 @@ export const Header: React.FC = () => {
             whileTap={{ scale: 0.95 }}
             className="flex items-center cursor-pointer md:px-8"
           >
-            <Link to="/">
+            <Link
+              to="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               <div
                 role="img"
                 aria-label="logo"

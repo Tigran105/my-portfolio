@@ -20,7 +20,11 @@ export const Navigation: React.FC = () => {
     <nav className="hidden md:flex items-center gap-5 text-sm">
       <ul className="flex gap-8">
         {NAV_LINKS.map((link) => (
-          <li key={link.id} className={"whitespace-nowrap"}>
+          <li
+            key={link.id}
+            className={"whitespace-nowrap"}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <NavLink
               href={link.href}
               label={getNavLabel(link.id)}
