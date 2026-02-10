@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <url>
+        <loc>https://tigran-dev.com/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tigran-dev.com/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tigran-dev.com/ru" />
+        <xhtml:link rel="alternate" hreflang="hy" href="https://tigran-dev.com/hy" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://tigran-dev.com/" />
+        <lastmod>2026-02-10</lastmod>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://tigran-dev.com/about</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tigran-dev.com/about" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tigran-dev.com/ru/about" />
+        <xhtml:link rel="alternate" hreflang="hy" href="https://tigran-dev.com/hy/about" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://tigran-dev.com/about" />
+        <lastmod>2026-02-10</lastmod>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://tigran-dev.com/experience</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tigran-dev.com/experience" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tigran-dev.com/ru/experience" />
+        <xhtml:link rel="alternate" hreflang="hy" href="https://tigran-dev.com/hy/experience" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://tigran-dev.com/experience" />
+        <lastmod>2026-02-10</lastmod>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://tigran-dev.com/contact</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tigran-dev.com/contact" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tigran-dev.com/ru/contact" />
+        <xhtml:link rel="alternate" hreflang="hy" href="https://tigran-dev.com/hy/contact" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://tigran-dev.com/contact" />
+        <lastmod>2026-02-10</lastmod>
+        <priority>0.8</priority>
+    </url>
+</urlset>
