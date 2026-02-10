@@ -33,14 +33,16 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
     if (savedLang && supportedLanguages.includes(savedLang)) {
       setLanguageState(savedLang);
     } else {
-      const browserLang = navigator.language.split("-")[0] as Language;
-      if (supportedLanguages.includes(browserLang)) {
-        setLanguageState(browserLang);
-      }
+      // const browserLang = navigator.language.split("-")[0] as Language;
+      // if (supportedLanguages.includes(browserLang)) {
+      //   setLanguageState(browserLang);
+      // }
+      setLanguageState(defaultLanguage);
     }
   }, []);
 
   const setLanguage = (lang: Language) => {
+    console.log(lang, "funnction");
     setLanguageState(lang);
     localStorage.setItem("language", lang);
   };
