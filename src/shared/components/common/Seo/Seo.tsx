@@ -30,10 +30,10 @@ export const Seo = ({
   ];
 
   // Переведённые мета-данные
-  const translatedTitle = t(titleKey) || "Tigran Sargsyan — Software Developer";
+  const translatedTitle = t(titleKey) || "Tigran Sargsyan - Software Developer";
   const translatedDescription =
     t(descriptionKey) ||
-    "Software Developer portfolio — building modern web applications with React, TypeScript & Node.js";
+    "Software Developer portfolio - building modern web applications with React, TypeScript & Node.js";
   const fullKeywords = [
     ...keywords,
     "Tigran Sargsyan",

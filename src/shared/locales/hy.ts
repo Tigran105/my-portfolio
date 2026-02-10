@@ -40,11 +40,11 @@ export const hy: Translation = {
     items: [
       {
         institution: "Basic IT Center",
-        time: "02.2020 — 09.2020",
+        time: "02.2020 - 09.2020",
       },
       {
         institution: "Հայաստանի ազգային պոլիտեխնիկական համալսարան, Երևան",
-        time: "09.2016 — 05.2022",
+        time: "09.2016 - 05.2022",
       },
     ],
   },
@@ -69,7 +69,7 @@ export const hy: Translation = {
       {
         id: 1,
         role: "Frontend Developer",
-        time: "09.2022 — ներկայումս",
+        time: "09.2022 - ներկայումս",
         company: "Pixeria LAB",
         type: "Լիաժամ · Հիբրիդ",
         skills: [
@@ -96,7 +96,7 @@ export const hy: Translation = {
       {
         id: 2,
         role: "Frontend Developer",
-        time: "01.2024 — 12.2025",
+        time: "01.2024 - 12.2025",
         company: "GenieWeb",
         type: "Կես դրույք · Հեռավար",
         skills: [
@@ -118,7 +118,7 @@ export const hy: Translation = {
       {
         id: 3,
         role: "Frontend Developer",
-        time: "01.2022 — 12.2022",
+        time: "01.2022 - 12.2022",
         company: "NWS LAB",
         type: "Լիաժամ · Գրասենյակ",
         skills: [
@@ -139,7 +139,7 @@ export const hy: Translation = {
       {
         id: 4,
         role: "Frontend Developer",
-        time: "08.2020 — 12.2021",
+        time: "08.2020 - 12.2021",
         company: "BeeOnCode LLC",
         type: "Լիաժամ · Գրասենյակ",
         skills: [
@@ -177,7 +177,7 @@ export const hy: Translation = {
     connect: "Կապ հաստատել ինձ հետ",
     other: "Կապի այլ տարբերակներ →",
     collaboration:
-      "Ես միշտ բաց եմ հետաքրքիր նախագծերի և համագործակցության համար: Եկեք կապ հաստատենք և միասին ստեղծենք ինչ-որ հիանալի:",
+      "Ես միշտ բաց եմ հետաքրքիր նախագծերի և համագործակցությունների համար։ Եկեք կապ հաստատենք և միասին ստեղծենք ինչ-որ հրաշալի բան։",
   },
   footer: {
     copyright: "Բոլոր իրավունքները պաշտպանված են",
@@ -256,22 +256,22 @@ export const hy: Translation = {
   },
   seo: {
     home: {
-      title: "Տիգրան Սարգսյան — Ավագ Ծրագրավորող",
+      title: "Տիգրան Սարգսյան - Ավագ Ծրագրավորող",
       description:
         "Ժամանակակից վեբ հավելվածների մշակում React, TypeScript և Node.js-ով: Հայաստանից:",
     },
     about: {
-      title: "Իմ Մասին — Տիգրան Սարգսյան",
+      title: "Իմ Մասին - Տիգրան Սարգսյան",
       description:
         "5+ տարվա փորձ ունեցող ծրագրավորող՝ ֆրոնթենդ և բեքենդ մշակման բնագավառում:",
     },
     experience: {
-      title: "Փորձ — Տիգրան Սարգսյան",
+      title: "Փորձ - Տիգրան Սարգսյան",
       description:
         "Պրոֆեսիոնալ ճանապարհ և կարևոր նախագծեր, որոնց վրա ես աշխատել եմ ծրագրավորողի կարգավիճակով:",
     },
     contact: {
-      title: "Կապ — Տիգրան Սարգսյան",
+      title: "Կապ - Տիգրան Սարգսյան",
       description:
         "Կապվեք ինձ հետ համագործակցության, ֆրիլանս նախագծերի կամ պարզապես ողջույն ասելու համար:",
     },
