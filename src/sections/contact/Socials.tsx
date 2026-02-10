@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 import { fadeInUp, fadeInLeft, staggerChildren } from "../../utils/animations";
 import { useLanguage } from "../../hooks/useLanguage";
 import toast from "react-hot-toast";
+import { AnimatedTitle } from "../../components/ui/AnimatedTitle.tsx";
 
 const iconMap = {
   github: FaGithub,
@@ -79,9 +80,10 @@ export const Socials: React.FC = () => {
     >
       <div className="space-y-6">
         <div className={"space-y-2 text-center mx-auto"}>
-          <h2 className="text-4xl font-bold text-gradient mx-auto px-2">
-            {t("contact.connect")}
-          </h2>
+          <AnimatedTitle
+            children={t("contact.connect")}
+            className={"mx-auto px-2"}
+          />
           <p className="text-foreground/70 text-center px-2">
             {t("contact.collaboration")}
           </p>

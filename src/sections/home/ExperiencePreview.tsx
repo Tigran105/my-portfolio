@@ -5,6 +5,7 @@ import { fadeInUp, fadeInLeft, staggerChildren } from "../../utils/animations";
 import { useLanguage } from "../../hooks/useLanguage";
 import type { ExperienceItem } from "../../locales";
 import { useNavigate } from "react-router-dom";
+import { AnimatedTitle } from "../../components/ui/AnimatedTitle.tsx";
 
 export const ExperiencePreview: React.FC = () => {
   const { t, get } = useLanguage();
@@ -22,16 +23,12 @@ export const ExperiencePreview: React.FC = () => {
     <section id="experience-preview" className="py-20 bg-foreground/3">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <motion.h2
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="text-4xl font-bold mb-4 text-gradient"
-          >
-            {t("experiencePreview.title")}
-          </motion.h2>
-
+          {/*Title*/}
+          <AnimatedTitle
+            children={t("experiencePreview.title")}
+            className={"mb-4"}
+          />
+          {/* Subtitle */}
           <motion.p
             variants={fadeInUp}
             initial="initial"

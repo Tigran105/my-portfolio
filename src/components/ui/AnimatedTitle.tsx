@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, type HTMLMotionProps } from "framer-motion";
+import { fadeInRight } from "../../utils/animations.ts";
 
 type TitleSize = "sm" | "md" | "lg";
 
@@ -46,11 +47,16 @@ export const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
       whileHover="hover"
       {...props}
     >
-      <h2
+      <motion.h1
+        variants={fadeInRight}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
         className={`${currentSize.text} ${currentSize.margin} font-bold tracking-tight text-gradient transition-colors duration-300`}
       >
         {children}
-      </h2>
+      </motion.h1>
 
       <motion.div
         variants={{

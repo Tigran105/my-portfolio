@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { fadeInUp, fadeInLeft, staggerChildren } from "../../utils/animations";
 import { useLanguage } from "../../hooks/useLanguage";
 import type { EducationItem } from "../../locales";
+import { AnimatedTitle } from "../../components/ui/AnimatedTitle.tsx";
 
 export const Education: React.FC = () => {
   const { t, get } = useLanguage();
@@ -20,8 +21,9 @@ export const Education: React.FC = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold mb-4 text-gradient"
           >
-            {t("education.title")}
+            {}
           </motion.h2>
+          <AnimatedTitle children={t("education.title")} className={"mb-4"} />
 
           <motion.p
             variants={fadeInUp}

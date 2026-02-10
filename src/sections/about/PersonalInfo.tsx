@@ -10,7 +10,6 @@ export const PersonalInfo: React.FC = () => {
   const personalSections =
     get<PersonalSection[]>("valuesAndPrinciples.items") || [];
 
-  console.log(personalSections);
   return (
     <div className="my-12">
       <AnimatedTitle

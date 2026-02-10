@@ -4,6 +4,7 @@ import { Button } from "../../components/ui/Button";
 import { fadeInUp } from "../../utils/animations";
 import { useLanguage } from "../../hooks/useLanguage";
 import { useNavigate } from "react-router-dom";
+import { AnimatedTitle } from "../../components/ui/AnimatedTitle.tsx";
 
 export const AboutPreview: React.FC = () => {
   const { t, get } = useLanguage();
@@ -16,15 +17,10 @@ export const AboutPreview: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Title */}
-          <motion.h2
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="text-4xl font-bold mb-4 text-gradient"
-          >
-            {t("aboutPreview.title")}
-          </motion.h2>
+          <AnimatedTitle
+            children={t("aboutPreview.title")}
+            className={"mb-4"}
+          />
 
           {/* Subtitle */}
           <motion.p

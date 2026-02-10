@@ -12,6 +12,7 @@ import { useLanguage } from "../../hooks/useLanguage";
 import video from "../../assets/heroBackground.mp4";
 import { useAppStore } from "../../store/appStore.ts";
 import { useNavigate } from "react-router-dom";
+import { AnimatedTitle } from "../../components/ui/AnimatedTitle.tsx";
 
 export const Hero: React.FC = () => {
   const { t } = useLanguage();
@@ -56,9 +57,12 @@ export const Hero: React.FC = () => {
         <motion.h1
           variants={fadeInLeft}
           className="text-5xl md:text-7xl font-bold mb-5 text-gradient py-2 pt-10"
-        >
-          {t("hero.title")}
-        </motion.h1>
+        ></motion.h1>
+        <AnimatedTitle
+          children={t("hero.title")}
+          size={"lg"}
+          className=" text-gradient py-2 pt-10"
+        />
 
         <motion.p
           variants={fadeInRight}

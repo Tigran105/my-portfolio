@@ -7,9 +7,7 @@ export const Contact: React.FC = () => {
   return (
     <Section id="contact">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        {/* Left Social / Contact Info */}
         <Socials />
-        {/* Right Form */}
         <GetInTouch />
       </div>
     </Section>
