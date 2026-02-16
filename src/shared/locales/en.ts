@@ -20,7 +20,7 @@ export const en: Translation = {
   },
   aboutPreview: {
     title: "About Me",
-    subtitle: "Senior Frontend Developer",
+    subtitle: "Frontend Developer",
     description:
       "I build scalable and high-performance web applications using React and TypeScript, with a strong focus on clean architecture and user experience.",
     highlights: [
@@ -256,7 +256,7 @@ export const en: Translation = {
   },
   seo: {
     home: {
-      title: "Tigran Sargsyan - Senior Software Developer",
+      title: "Tigran Sargsyan - Software Developer",
       description:
         "Building modern web applications with React, TypeScript & Node.js. Based in Armenia.",
     },
@@ -275,7 +275,7 @@ export const en: Translation = {
       description:
         "Get in touch for collaboration opportunities, freelance projects, or just to say hello.",
     },
-    jobTitle: "Senior Software Developer",
+    jobTitle: "Software Developer",
     company: "Freelance",
   },
 };

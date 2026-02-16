@@ -19,7 +19,7 @@ export const hy: Translation = {
   },
   aboutPreview: {
     title: "Իմ մասին",
-    subtitle: "Senior Frontend Developer",
+    subtitle: "Frontend Developer",
     description:
       "Ես ստեղծում եմ մասշտաբավորվող և արագ աշխատող վեբ հավելվածներ React և TypeScript օգտագործելով՝ մեծ ուշադրություն դարձնելով ճարտարապետությանը և օգտատիրոջ փորձին։",
     highlights: [
@@ -256,7 +256,7 @@ export const hy: Translation = {
   },
   seo: {
     home: {
-      title: "Տիգրան Սարգսյան - Ավագ Ծրագրավորող",
+      title: "Տիգրան Սարգսյան - Ծրագրավորող",
       description:
         "Ժամանակակից վեբ հավելվածների մշակում React, TypeScript և Node.js-ով: Հայաստանից:",
     },
@@ -275,7 +275,7 @@ export const hy: Translation = {
       description:
         "Կապվեք ինձ հետ համագործակցության, ֆրիլանս նախագծերի կամ պարզապես ողջույն ասելու համար:",
     },
-    jobTitle: "Ավագ Ծրագրավորող",
+    jobTitle: "Ծրագրավորող",
     company: "Ֆրիլանս",
   },
 };

@@ -21,7 +21,7 @@ export const ru: Translation = {
   },
   aboutPreview: {
     title: "Обо мне",
-    subtitle: "Senior Frontend Developer",
+    subtitle: "Frontend Developer",
     description:
       "Я разрабатываю масштабируемые и производительные веб-приложения на React и TypeScript, уделяя особое " +
       "внимание архитектуре и пользовательскому опыту.",
@@ -270,7 +270,7 @@ export const ru: Translation = {
 
   seo: {
     home: {
-      title: "Тигран Саргсян - Старший разработчик ПО",
+      title: "Тигран Саргсян - Программист",
       description:
         "Создаю современные веб-приложения с использованием React, TypeScript и Node.js. Из Армении.",
     },
@@ -289,7 +289,7 @@ export const ru: Translation = {
       description:
         "Свяжитесь со мной для сотрудничества, фриланс проектов или просто чтобы поздороваться.",
     },
-    jobTitle: "Старший разработчик программного обеспечения",
+    jobTitle: "разработчик программного обеспечения",
     company: "Фриланс",
   },
 };
