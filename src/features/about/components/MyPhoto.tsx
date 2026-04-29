@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/shared/contexts/LanguageContext.tsx";
 import { fadeInLeft } from "@/shared/utils/animations.ts";
-import myPhoto from "@/assets/myPhoto2.jpg";
+import myPhoto from "@/assets/MyPhoto.jpg";
 
 interface MyPhotoProps {
   className: string;

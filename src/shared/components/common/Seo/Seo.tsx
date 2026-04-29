@@ -87,7 +87,7 @@ export const Seo = ({
           "@type": "Person",
           name: "Tigran Sargsyan",
           url: baseUrl,
-          image: `${baseUrl}/myPhoto2.jpg`,
+          image: `${baseUrl}/MyPhoto.jpg`,
           sameAs: [
             "https://github.com/Tigran105",
             "https://www.linkedin.com/in/tigran-sargsyan105",
