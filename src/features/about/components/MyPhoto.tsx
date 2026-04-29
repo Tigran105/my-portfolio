@@ -28,7 +28,7 @@ export const MyPhoto: React.FC<MyPhotoProps> = ({ className }) => {
                 style={{
                   backgroundImage: `url(${myPhoto})`,
                   backgroundSize: "cover",
-                  backgroundPosition: "center",
+                  backgroundPosition: "top",
                   scale: 1.1,
                 }}
                 whileHover={{ scale: 1.15 }}
